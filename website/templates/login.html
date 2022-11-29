@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+        {% for category,message in messages%}
+            {% if category=='Error'%}
+                <div class="audun_warn">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                    {{message}}
+                </div>
+            {%else%}
+                <div class="audun_success">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                    {{message}}
+                </div>
+            {%endif%}
+        {%endfor%}
+    {%endif%}
+    {%endwith%}
+    <section class="book" id="book">
+        <div class="col below" >
+            <div class="image">
+                <img src="/static/images/login.svg" alt="">
+            </div>
+            <form method="POST" class="book-form">
+                <div class="flex below">
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email" placeholder="enter your email" name="email">
+                </div>
+                <div class="inputBox">
+                    <span>password</span>
+                    <input type="password" placeholder="enter your password" name="password">
+                </div>
+                <div>
+                    <input type="checkbox" id="remember">
+                    <label for="remember" id="remember">Remember Me</label>
+                    </div>
+                </div>
+                <input type="submit" value="login" class="btn" name="send">
+                <p>forget password? <a href="#">click here</a></p>
+        <p>don't have and account? <a href="/signup" target=_blank >register now</a></p>
+            </form>
+        </div>
+    </section>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- custom js file link  -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
