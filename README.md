@@ -7,6 +7,14 @@ It is a prototype design for tours and travels portal. which supports users to b
 
 Technologies used: HTML, CSS, Javascript, Python, MYSQL, Flask
 
+## Dependencies
+
+Open Terminal Run this Command
+
+    pip install flask
+    pip install flask_login
+    pip install flask_sqlalchemy
+
 ## Deployment
 
 To host this project
@@ -17,3 +25,4 @@ To host this project
     
     c)Then go to link http://127.0.0.1:5000
     
+
